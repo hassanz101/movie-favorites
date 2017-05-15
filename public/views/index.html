@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="views/styles.css">
+    <title>Movie/Favorites</title>
+  </head>
+  <body ng-app="myApp">
+    <div class="jumbotron">
+<h1>Movies</h1>
+</div>
+<div ng-controller="Moviesearch as ms" ng-init=''>
+<input type="text"placeholder="Movie search" ng-model="ms.searchbox"/>
+<button ng-click= "ms.getMovies()">Search Movies</button>
+<div ng-repeat="search in ms.movieArray" class='col-sm-4'>
+  <div class="row">
+  <h3>{{search.Title}}</h3>
+  <h4>{{search.Year}}</h4>
+  <img ng-src="{{search.Poster}}"/>
+  </div>
+</div>
+</div>
+  </body>
+</html>
