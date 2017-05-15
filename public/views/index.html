@@ -16,6 +16,8 @@
     <h1>Movies</h1>
   </div>
   <div class="container">
+    <nav><a href="/favorites">My Favorites</a></nav>
+    <ng-view></ng-view>
   <div ng-controller="Moviesearch as ms" ng-init=''>
     <input type="text" placeholder="Movie search" ng-model="ms.searchbox" />
     <button ng-click="ms.getMovies()">Search Movies</button>
@@ -23,7 +25,7 @@
       <div class="row">
         <h3>{{search.Title}}</h3>
         <h4>{{search.Year}}</h4>
-        <img ng-src="{{search.Poster}}" id="poster"/>
+        <img ng-src="{{search.Poster}}" class='col-md-9'/>
         <!-- fav movies -->
         <button ng-click='ms.postFav(search.Title, search.Year, search.Poster)'>Favorite</button>
       </div>

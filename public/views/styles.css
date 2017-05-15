@@ -1,7 +1,7 @@
 .container{
   font-family: 'Barrio', cursive;
   border-style:ridge;
-  color: black;
+  color: #CC6600;
   margin: 1em;
   text-align: center;
   background-image: url(https://s-media-cache-ak0.pinimg.com/originals/90/07/04/90070487e785a81382491d4c89b508a1.jpg);
@@ -14,11 +14,7 @@
   background-image: url(http://clipartix.com/wp-content/uploads/2016/06/Movie-reel-movie-film-camera-clipart-image.jpg);
   text-shadow: black 0.3em 0.3em 0.3em;
 }
-#poster{
-  margin-bottom: 1em;
-}
 
 body{
   background-image: url(http://clipartix.com/wp-content/uploads/2016/06/Movie-reel-movie-film-strip-clip-art-image.png);
-
 }
