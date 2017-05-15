@@ -23,20 +23,22 @@ vm.getMovies = function(){
   });//end then
 };// end getMovies
 
-vm.postFav = function () {
+vm.postFav = function (title, year, poster) {
   console.log('In post faves');
   var movieToSend = {
-    Title: vm.Title,
-    Year: vm.Year,
-    Poster: vm.Poster,
-    ImdbID: vm.imdbID
+    Title: title,
+    Year: year,
+    Poster: poster,
+    // ImdbID: ms.imdbID
   };
+  console.log('this the movie to send',movieToSend);
+
   $http({
     method: 'POST',
     url: '/favorites',
-    data: movieToSend
-  }).then( function ( data ) {
-    console.log( "this is the POST response", data );
+    data: movieToSend,
+  }).then( function ( response ) {
+    console.log( "this is the POST response", response );
   });//end success
 };//end postfav
 });//end controller
