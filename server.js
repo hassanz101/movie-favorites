@@ -5,9 +5,6 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-//this is the MODEL for the database  ->used to find and create new assignments below
-// var assignments = require('./models/assignments');
-
 // uses
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -26,8 +23,16 @@ var movieSchema = mongoose.Schema({
 var movies = mongoose.model( 'movies', movieSchema );
 
 //creates the port for the server
-var port = process.env.Port || 5050;
+var port = process.env.PORT || 5050;
 
+//post fav movie info
+app.post('/favorites', function(req, res){
+  console.log('server posting', req.body);
+  var addMovie= movies(req.body);
+  addMovie.save().then(function(){
+    res.sendStatus(200);
+  });//save end
+}); //post end
 
 //base url get function
 app.get('/', function(req, res){
